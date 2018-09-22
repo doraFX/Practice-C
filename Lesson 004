@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+  //输入某年某月某日，判断这一天是这一年的第几天？
+	int year,month,day;
+	printf("请输入年月日（格式XXXX.XX.XX）："); 
+	scanf("%d.%d.%d",&year,&month,&day);
+	int monthday[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+	if(year%400==0||(year%100!=0&&year%4==0))
+	{
+		monthday[2]=29;
+	}
+	if(year<0||month<0||month>13||day<1||day>monthday[month])
+	{
+		printf("日期有误！\n");
+		return 0; 
+	}
+	int i,days=0;
+	for(i=0;i<month;i++)
+	{
+		days+=monthday[i];
+	}
+	printf("这是%d年的第%d天\n",year,days);
+	return 0;
+}
