@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+	double m;
+	double a,b,c,d,e;
+	double x;
+	double aa,bb,cc,dd,ee;
+	printf("你的净利润是：");
+	scanf("%lf",&m);//%d 十进制整型 %ld 十进制长整型 %s 字符串 %c 字符 %f 浮点型
+	a=100000,b=200000,c=400000,d=600000,e=1000000;
+	aa=a*0.1;
+	bb=a*0.1+(b-a)*0.075;
+	cc=a*0.1+(b-a)*0.075+(c-b)*0.05;
+	dd=a*0.1+(b-a)*0.075+(c-b)*0.05+(d-c)*0.03;
+	ee=a*0.1+(b-a)*0.075+(c-b)*0.05+(d-c)*0.015+(e-d)*0.01;
+	if(m<=a)
+	{
+	    x=m*0.1;
+	}
+	else if(m>a&&m<=b)
+	{
+		x=aa+(m-a)*0.075;
+	}
+	else if(m>b&&m<=c)
+	{
+		x=bb+(m-b)*0.05;
+	}
+	else if(m>c&&m<=d)
+	{
+		x=cc+(m-c)*0.03;
+	}
+	else if(m>d&&m<=e)
+	{
+		x=dd+(m-d)*0.015;
+	}
+	else if(m>e)
+	{
+		x=ee+(m-e)*0.01;
+	}
+	printf("奖金总数是：%lf",x);
+	return 0;
+}
